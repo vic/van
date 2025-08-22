@@ -1,0 +1,28 @@
+[package]
+name = "van"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+lipgloss = "*"
+bubbletea-rs = "*"
+# Disable default features for bubbletea-widgets (prevents optional clipboard backend)
+bubbletea-widgets = { version = "*", default-features = false }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+which = "4.4"
+
+# runtime helpers for interactive Program
+once_cell = "1.20"
+futures = "0.3"
+
+# Use crossterm version compatible with bubbletea-rs
+crossterm = "0.29"
+
+# tokio for async main used in src/main.rs
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+
+
+[dev-dependencies]
+regex = "1.10"
